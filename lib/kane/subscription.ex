@@ -107,7 +107,7 @@ defmodule Kane.Subscription do
   end
 
   defp project do
-    {:ok, project} = Goth.Config.get(:project_id)
+    {:ok, project} = Goth.Config.get(Kane.Client.project_email(), :project_id)
     project
   end
 
@@ -127,7 +127,7 @@ defmodule Kane.Subscription do
   def full_name(%__MODULE__{name: name}), do: full_name(name)
 
   def full_name(name) do
-    {:ok, project} = Goth.Config.get(:project_id)
+    {:ok, project} = Goth.Config.get(Kane.Client.project_email(), :project_id)
     "projects/#{project}/subscriptions/#{name}"
   end
 

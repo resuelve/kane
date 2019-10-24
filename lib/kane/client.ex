@@ -32,9 +32,10 @@ defmodule Kane.Client do
 
   defp endpoint, do: Application.get_env(:kane, :endpoint, "https://pubsub.googleapis.com/v1")
   defp token_mod, do: Application.get_env(:kane, :token, Goth.Token)
+  def project_email, do: Application.get_env(:kane, :project_email)
 
   defp auth_header do
-    {:ok, token} = token_mod().for_scope(Kane.oauth_scope())
+    {:ok, token} = token_mod().for_scope({project_email(), Kane.oauth_scope()})
     {"Authorization", "#{token.type} #{token.token}"}
   end
 
