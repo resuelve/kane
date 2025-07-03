@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/peburrows/kane.svg?branch=master)](https://travis-ci.org/peburrows/kane)
 
+> Se archiva este proyecto porque ya no se usa en el proyecto que requería estos cambios custom
+
 # Kane
 
 Kane. Citizen Kane. Charles Foster Kane, to be exact, Publisher extraordinaire. Rosebud.
